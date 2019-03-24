@@ -10,29 +10,6 @@ import { Router } from '@angular/router';
 })
 
 export class ProfileComponent implements OnInit {
-/*
-  email = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);
-
-  telefono = new FormControl('', [Validators.required]);
-
-  profileForm: FormGroup = this.builder.group({
-    username: this.username,
-    password: this.password
-  });
-*/
-/*
-studentPersonalDataForm = this.fb.group({
-personalData: this.fb.group({
-name: ['', Validators.required, Validators.minLength(3)],
-......
-})
-})
-*/
-
-  //loginForm: FormGroup = this.builder.group({ });
 
   profile: any = {
 	    uid: '',
@@ -69,8 +46,6 @@ name: ['', Validators.required, Validators.minLength(3)],
 	    }
 	  };
 
-
-
   constructor(private builder: FormBuilder, private profileService: ProfileService, private router: Router) { }
 
 
@@ -83,16 +58,5 @@ name: ['', Validators.required, Validators.minLength(3)],
 		});
 	
 	}
-	/*
-	updateProfile(profile: any) {
-		this.profileForm.patchValue({
-		personalData: {
-		name: user.name
-		
-		}
-		});
-	}
-*/
-
 
 }

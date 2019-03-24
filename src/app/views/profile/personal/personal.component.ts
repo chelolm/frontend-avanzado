@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PersonalComponent implements OnInit {
 
-  nombre = new FormControl('', [
+  name = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
     Validators.maxLength(55),
@@ -39,7 +39,7 @@ export class PersonalComponent implements OnInit {
   competencias = new FormControl('', []);
 
   personalForm: FormGroup = this.builder.group({
-    nombre: this.nombre,
+    name: this.name,
     apellidos: this.apellidos,
     nacimiento: this.nacimiento,
     telefono1: this.telefono1,
@@ -91,19 +91,19 @@ export class PersonalComponent implements OnInit {
 
   constructor(private builder: FormBuilder, private profileService: ProfileService, private router: Router) { }
 
-ngOnInit() {
+	ngOnInit() {
 		
 		this.profileService.loadProfile().subscribe(data => { 
 			this.profile = data;
 			console.log(data);
-			this.updateProfile(this.profile);
+			this.updateForm(this.profile);
 		});
 	
 	}
 	
-	updateProfile(profile: any) {
+	updateForm(profile: any) {
 		this.personalForm.patchValue({
-			nombre: profile.name,
+			name: profile.name,
 			apellidos: profile.surname,
 			nacimiento: profile.nacimiento,
 		    telefono1: profile.telefono,
@@ -112,6 +112,10 @@ ngOnInit() {
 			acercade: profile.acercade,
 			competencias: profile.competencias
 		});
+	}
+
+	putProfile() {
+		this.profileService.updateProfile(this.personalForm.value);
 	}
 
 }

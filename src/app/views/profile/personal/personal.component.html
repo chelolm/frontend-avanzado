@@ -1,16 +1,16 @@
 <div class='formulario'>
-  <form [formGroup]="personalForm" class='datos-personales' action='personal.component.html' method='post'>
+  <form [formGroup]="personalForm" class='datos-personales'>
     <div class="foto"><img src="assets/{{profile.avatar_hash}}.png" alt="Fotografía estudiante" class="foto"></div>
     <h1>{{profile.name}}</h1>
     <fieldset>
         <ul>
         <li id='nom-apell' class='requerido'>
           <label for='nombre'>Nombre</label>
-          <input type='text' name='nomb' value class='medium' id='nombre' [formControl]="nombre">
+          <input type='text' name='nomb' value class='medium' id='nombre' [formControl]="name">
           
           <label for='apellidos'>Apellidos</label>
           <input type='text' name='apell' value class='medium' id='apellidos' [formControl]="apellidos">
-          <div [hidden]="(nombre.valid || nombre.untouched) && (apellidos.valid || apellidos.untouched)">
+          <div [hidden]="(name.valid || name.untouched) && (apellidos.valid || apellidos.untouched)">
             Existe un problema con el nombre o los apellidos
           </div>
         </li>
@@ -69,6 +69,6 @@
     </fieldset>
 
 
-    <input type="submit" value="Guardar" id="submitButton">
+    <input type="submit" (click)="putProfile()" value="Guardar" id="submitButton">
   </form>
 </div>

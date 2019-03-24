@@ -139,11 +139,9 @@ export class ProfileService {
     /*  this.store$.dispatch(new UserActions.Logout()); */
   }
   public updateProfile(profile: any /* User */): Observable<any /* User */> {
-    /*if (Math.random() > 0.5) {
-      return this.http.put<TokenResponse>(AppSettings.API_ENDPOINT_USER_ME, profile);
-    }*/
-    this.mockUser = { ...profile };
-    return of(this.mockUser as any /* User */);
+      return this.http.put<any>(AppSettings.API_ENDPOINT_PROFILE, profile);
+    //this.mockUser = { ...profile };
+    //return of(this.mockUser as any /* User */);
   }
   public signupProfile(profile: any /* UserOptions */): Observable<boolean> {
     return this.http.post<boolean>(
