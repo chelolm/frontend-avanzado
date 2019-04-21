@@ -1,54 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { ProfileService } from '../../shared/services/profile.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SigninService } from './signin.service';
+import { ProfileService } from 'src/app/shared/services/profile.service';
+import { Store, select } from '@ngrx/store';
+import { IAppState } from '../../shared/state/app.state';
+import { UserLogin } from '../../shared/state/user/actions/user.actions';
+
+import { selectUser } from '../../shared/state/user/selectors/user.selectors';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
-
 export class SigninComponent implements OnInit {
+  loginForm: FormGroup;
+  submitted = false;
+  errorLogin = false;
+  user$ = this._store.pipe(select(selectUser));
+  constructor(
+    private signinService: SigninService,
+    private profileService: ProfileService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private _store: Store<IAppState>
+  ) {}
 
-users: any;
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', Validators.required]
+    });
+    
+  }
 
-  username = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);
-
-  password = new FormControl('', [Validators.required]);
-
-  loginForm: FormGroup = this.builder.group({
-    username: this.username,
-    password: this.password
-  });
-
-  constructor(private builder: FormBuilder, private profileService: ProfileService, private router: Router) { }
-
-	login() {
-		console.log(this.loginForm.value);
-		this.getAllUsers();
-		// Comprobar usuario y password
-		// Lo normal sería crear una función de validación en el backend a la que se le pasara usuario y contraseña en lugar de recuperar todos los usuarios, pero se comprueba que el fake backend funciona
-
-		this.router.navigate(['/admin/dashboard/']);
-	}
-
-	forgot() {
-		this.router.navigate(['/forgot-password/']);
-	}
-
-	ngOnInit() {
-
-	} //ngOnInit
-
-	getAllUsers() {
-		this.profileService.getUsers().subscribe(data => {
-		this.users = data;
-		});
-	}
-
-
+  onSubmit() {
+    this.submitted = true;
+    this._store.dispatch(new UserLogin({ ...this.loginForm.value }));
+  }
 }

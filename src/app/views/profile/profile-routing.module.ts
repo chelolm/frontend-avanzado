@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile.component';
-import { PersonalComponent } from './personal/personal.component';
-import { EducationComponent } from './education/education.component';
-import { LanguagesComponent } from './languages/languages.component';
+import { ProfileStudyComponent } from './profile-student/study/profile-study.component';
+import { ProfileLanguageComponent } from './profile-student/language/profile-language.component';
+import { ProfileAccountComponent } from './profile-student/account/profile-account.component';
 
 const routes: Routes = [
   {
@@ -11,16 +11,24 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path: 'personal',
-    component: PersonalComponent
+    path: 'profile-student/account',
+    component: ProfileAccountComponent
   },
   {
-    path: 'education',
-    component: EducationComponent
+    path: 'profile-student/study',
+    component: ProfileStudyComponent
   },
   {
-    path: 'languages',
-    component: LanguagesComponent
+    path: 'profile-student/study/:uid',
+    component: ProfileStudyComponent
+  },
+  {
+    path: 'profile-student/language',
+    component: ProfileLanguageComponent
+  },
+  {
+    path: 'profile-student/language/:uid',
+    component: ProfileLanguageComponent
   }
 ];
 
@@ -28,4 +36,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProfileRoutingModule { }
+export class ProfileRoutingModule {}

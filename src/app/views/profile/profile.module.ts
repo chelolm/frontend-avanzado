@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
-import { EducationComponent } from './education/education.component';
-import { LanguagesComponent } from './languages/languages.component';
-import { PersonalComponent } from './personal/personal.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ProfileStudentComponent } from './profile-student/profile-student.component';
+import { ProfileStudyComponent } from './profile-student/study/profile-study.component';
+import { VocationalFormComponent } from './profile-student/study/vocational-form/vocational-form.component';
+import { UniversityDegreeComponent } from './profile-student/study/university-degree-form/university-degree-form.component';
+import { ProfileLanguageComponent } from './profile-student/language/profile-language.component';
+import { ProfileAccountComponent } from './profile-student/account/profile-account.component';
 
 @NgModule({
-  declarations: [ProfileComponent, EducationComponent, LanguagesComponent, PersonalComponent],
-  imports: [
-    CommonModule,
-    ProfileRoutingModule,
-	ReactiveFormsModule,
-	FormsModule 
-  ]
+  declarations: [
+    ProfileComponent,
+    ProfileStudentComponent,
+    ProfileStudyComponent,
+    VocationalFormComponent,
+    UniversityDegreeComponent,
+    ProfileLanguageComponent,
+    ProfileAccountComponent
+  ],
+  imports: [SharedModule, ProfileRoutingModule]
 })
-export class ProfileModule { }
+export class ProfileModule {}

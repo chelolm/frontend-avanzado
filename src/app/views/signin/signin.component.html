@@ -1,50 +1,53 @@
-<form [formGroup]="loginForm">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <img src="/assets/img/uoc_logo.png" />
 
-<div class="campos">
-  <div class="foto"><img src="assets/uoc-logo.png" alt="Logotipo Centro educativo Univesitat Oberta de Cataluya" class="foto" width="240px"></div>
-  <div class="username">
+      <h2>Login</h2>
+      
 
-    <label for="username">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="errorLogin" class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">
+            &times;
+          </button>
 
-    <input
-      type="text"
-      name="username"
-      id="username"
-      [formControl]="username">
+          There is an error in email or password
+        </div>
 
-    <div [hidden]="username.valid || username.untouched">
-      <div>
-        The following problems have been found with the email:
-      </div>
-
-      <div [hidden]="!username.hasError('email')">
-        The email format is not valid.
-      </div>
-      <div [hidden]="!username.hasError('required')">
-        The email is required.
-      </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': submitted && loginForm.controls.email.errors
+            }"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': submitted && loginForm.controls.password.errors
+            }"
+          />
+        </div>
+        <div class="form-group">
+          <button [disabled]="loginForm.invalid" class="btn btn-primary">
+            Login
+          </button>
+          <a routerLink="/forgot-password" class="btn btn-link"
+            >Remember password</a
+          >
+        </div>
+      </form>
     </div>
   </div>
-  <div class="password">
-    <label for="password">Password&nbsp;</label>
-    <input
-      type="password"
-      name="password"
-      id="password" [formControl]="password">
-
-    <div [hidden]="password.valid || password.untouched">
-      <div>
-        The following problems have been found with the password:
-      </div>
-
-      <div [hidden]="!password.hasError('required')">
-        The password is required.
-      </div>
-    </div>
-  </div>
-    <div>
-      <button (click)="login()" [disabled]="!loginForm.valid" class="boton">Log In</button>
-      <button (click)="forgot()" class="boton">Recuperar contraseña</button>
-    </div>
 </div>
-</form>
