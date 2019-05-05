@@ -1,1 +1,0 @@
-{"version":3,"file":"app.reducers.js","sourceRoot":"","sources":["../../../../../../../../src/app/shared/state/offers/reducers/app.reducers.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,aAAa,EAAE,MAAM,oBAAoB,CAAC;AAEnD,qDAAqD;AACrD,OAAO,EAAE,YAAY,EAAE,MAAM,iBAAiB,CAAC;AAE/C,MAAM,CAAC,IAAM,WAAW,GAAqC;IAC3D,MAAM,EAAE,aAAa;IACrB,IAAI,EAAE,YAAY;CACnB,CAAC"}

@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from '../../../../shared/services/profile.service';
@@ -11,34 +18,33 @@ import {
   Province
 } from 'src/app/shared/models/user.model';
 import { documentNumberValidator } from 'src/app/shared/directives/document-number-validator.directive';
-import { Store, select } from '@ngrx/store';
-import { IAppState } from '../../../../shared/state/app.state';
-import { selectUser } from '../../../../shared/state/user/selectors/user.selectors';
-import { updateUser } from '../../../../shared/state/user/actions/user.actions';
+import { AppStore } from 'src/app/shared/states/store.interface';
+import { Store } from '@ngrx/store';
+import { getProfile } from 'src/app/shared/states/user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile-account',
   templateUrl: './profile-account.component.html',
   styleUrls: ['./profile-account.component.scss']
 })
-export class ProfileAccountComponent implements OnInit {
+export class ProfileAccountComponent implements OnInit, OnChanges {
+  @Input() user: User;
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onSave: EventEmitter<User> = new EventEmitter<User>();
   rForm: FormGroup;
-  user: User;
   documentsType: DocumentType[];
   municipes: Municipe[];
   provinces: Province[];
 
-  constructor(private router: Router, private _store: Store<IAppState>) {}
+  constructor() {}
   ngOnInit() {
-
-    const user$ = this._store.pipe(select(selectUser));
-    user$.subscribe(user => {
-      this.user = user;
-      this.loadSelectProperties();
-      this.loadFormInstance();
-    });
+    this.loadSelectProperties();
+    this.loadFormInstance();
   }
-
+  ngOnChanges() {
+    this.loadFormInstance();
+  }
   public loadSelectProperties(): void {
     this.documentsType = MockData.DOCUMENTS_TYPE;
     this.municipes = MockData.MUNICIPES;
@@ -97,11 +103,16 @@ export class ProfileAccountComponent implements OnInit {
   }
 
   public save() {
-    
-    const user = { ...this.user, ...this.rForm.value };
-  
-    this._store.dispatch(new updateUser(user));
-    this.router.navigate(['/admin/profile']);
+    const { street = '', municipe = '', province = '', ...rest } = {
+      ...this.rForm.value
+    };
+    const address = {
+      street,
+      municipe,
+      province
+    };
+    const user = { ...this.user, address, ...rest };
+    this.onSave.emit(user);
   }
   compareByUID(option1, option2) {
     return option1.uid === (option2 && option2.uid);
