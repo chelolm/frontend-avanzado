@@ -4,9 +4,12 @@ import { SigninRoutingModule } from './signin-routing.module';
 import { SigninComponent } from './signin.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import { MaterialModule } from '../../shared/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [SigninComponent],
-  imports: [SharedModule, SigninRoutingModule],
+  imports: [SharedModule, SigninRoutingModule, MaterialModule, FlexLayoutModule],
   providers: []
 })
 export class SigninModule {}

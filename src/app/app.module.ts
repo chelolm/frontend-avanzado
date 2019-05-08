@@ -7,11 +7,15 @@ import { rootRouterConfig } from './app-routing';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FakeBackendService } from './shared/inmemory-db/fake-backend.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from './shared/material.module';
 
 @NgModule({
   imports: [
     SharedModule,
     CoreModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(FakeBackendService, {
@@ -23,3 +27,4 @@ import { FakeBackendService } from './shared/inmemory-db/fake-backend.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+export class PizzaPartyAppModule { }
