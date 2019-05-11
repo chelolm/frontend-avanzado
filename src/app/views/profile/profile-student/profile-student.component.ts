@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/shared/models/user.model';
 
+import { MatTableDataSource } from '@angular/material';
+
 @Component({
   selector: 'app-profile-student',
   templateUrl: './profile-student.component.html',
@@ -13,6 +15,9 @@ export class ProfileStudentComponent {
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onDeleteLanguage: EventEmitter<User> = new EventEmitter();
 
+  
+  displayedColumns = ['level', 'name', 'date', 'acciones'];
+  displayedColumnsFormacion=['level', 'grade?', 'title', 'institution', 'date', 'certificate','bilingue','dual','acciones']
   constructor() {}
 
   deleteStudy(studyID: number) {

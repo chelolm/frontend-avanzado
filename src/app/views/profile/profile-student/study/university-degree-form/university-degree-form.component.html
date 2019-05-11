@@ -1,44 +1,42 @@
 <form [formGroup]="rForm" (submit)="submit()">
-  <div class="form-group">
-    <label for="institution">Centro educativo</label>
-    <input
+    <mat-form-field>
+        <mat-label>Centro educativo</mat-label>
+        <input matInput
       type="text"
-      class="col-sm-10 form-control"
       name="institution"
       formControlName="institution"
     />
-  </div>
+    <mat-error *ngIf="rForm.get('institution').hasError('required')">El centro es obligatorio</mat-error>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="title">Título</label>
-    <input
+  <mat-form-field>
+        <mat-label>Título</mat-label>
+        <input matInput
       type="text"
-      class="col-sm-10 form-control"
       name="title"
       formControlName="title"
     />
-  </div>
+    <mat-error *ngIf="rForm.get('title').hasError('required')">El título es obligatorio</mat-error>
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="date">Fecha de obtención del título</label>
-    <input
+  <mat-form-field>
+      <mat-label>Fecha de obtención del título</mat-label>
+      <input matInput
       type="text"
       name="date"
-      class="col-sm-10 form-control"
       formControlName="date"
     />
-  </div>
-  <div class="form-group">
-    <label for="bilingue">Bilingue</label>
-    <input
-      type="checkbox"
-      name="bilingue"
-      class="form-check-input"
-      formControlName="bilingue"
-    />
-  </div>
+    <mat-error *ngIf="rForm.get('date').hasError('required')">La fecha es obligatoria</mat-error>
+  </mat-form-field>
 
-  <button class="btn btn-primary" type="submit" [disabled]="rForm.invalid">
+      <mat-label>Bilingue</mat-label>
+      <mat-checkbox
+      name="bilingue"
+      formControlName="bilingue">
+    </mat-checkbox>
+
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="rForm.invalid">
     Guardar
   </button>
 </form>

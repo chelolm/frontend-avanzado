@@ -1,43 +1,54 @@
-<form [formGroup]="rForm" (submit)="submit()">
-  <div class="form-group">
-    <label for="level">Nivel</label>
-    <select
-      [compareWith]="compareLevel"
-      class="col-sm-10 form-control"
-      name="level"
-      formControlName="level"
-    >
-      <option [ngValue]="level" *ngFor="let level of languageLevels">
-        {{ level.name }}</option
-      >
-    </select>
-  </div>
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="50%" >
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Idiomas</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <mat-card>
 
-  <div class="form-group">
-    <label for="name">Idioma</label>
-    <select
-      class="col-sm-10 form-control"
-      name="name"
-      formControlName="name"
-      [compareWith]="compareName"
-    >
-      <option [ngValue]="name" *ngFor="let name of languageNames">
-        {{ name.name }}</option
-      >
-    </select>
-  </div>
+        <form [formGroup]="rForm" (submit)="submit()">
 
-  <div class="form-group">
-    <label for="date">Fecha de obtención del título</label>
-    <input
-      type="text"
-      name="date"
-      class="col-sm-10 form-control"
-      formControlName="date"
-    />
-  </div>
 
-  <button class="btn btn-primary" type="submit" [disabled]="rForm.invalid">
-    Guardar
-  </button>
-</form>
+            <mat-form-field>
+                <mat-label>Nivel</mat-label>
+                <mat-select [compareWith]="compareLevel" name="level" formControlName="level">
+                <mat-option [value]="level" *ngFor="let level of languageLevels">
+                  {{ level.name }}
+                </mat-option>
+              </mat-select>
+                <mat-error *ngIf="rForm.get('level').hasError('required')">El nivel es obligatorio</mat-error>
+              </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Idioma</mat-label>
+            <mat-select name="name" formControlName="name" [compareWith]="compareName">
+              <mat-option [value]="name" *ngFor="let name of languageNames">
+                {{ name.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="rForm.get('name').hasError('required')">El idioma es obligatorio</mat-error>
+          </mat-form-field>
+          
+
+          <mat-form-field>
+              <mat-label>Fecha de obtención del título</mat-label>
+              <input matInput
+              type="text"
+              name="date"
+              formControlName="date"
+            />
+            <mat-error *ngIf="rForm.get('date').hasError('required')">La fecha es obligatoria</mat-error>
+        </mat-form-field>
+
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="rForm.invalid">
+            Guardar
+          </button>
+        </form>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

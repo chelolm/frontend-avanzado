@@ -12,13 +12,17 @@ import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-offers-list',
-  templateUrl: './offers-list.component.html'
+  templateUrl: './offers-list.component.html',
+  styleUrls: ['./offers-list.component.scss']
 })
 export class OffersListComponent implements OnChanges {
   @Input() user: User;
   @Input() offers: Offer[];
   offersStudy: Offer[] = [];
   offersOther: Offer[] = [];
+  displayedColumns=['Puesto', 'Empresa', 'Familia', 'Fecha', 'Provincia', 'Municipio','Inscrito','Acciones']
+  displayedColumnsOthers=['Puesto', 'Empresa', 'Familia', 'Fecha', 'Provincia', 'Municipio']
+
   constructor() {}
   ngOnChanges(changes: SimpleChanges) {
     if (changes.user && changes.offers) {

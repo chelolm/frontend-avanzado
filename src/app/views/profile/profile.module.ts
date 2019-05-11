@@ -12,6 +12,12 @@ import { ProfileAccountWrapperComponent } from './profile-student/account/profil
 import { ProfileLanguageWrapperComponent } from './profile-student/language/profile-language.component-wrapper';
 import { ProfileStudyWrapperComponent } from './profile-student/study/profile-study.component-wrapper';
 
+import { MaterialModule } from '../../shared/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MatTableModule, MatSelectModule } from '@angular/material';
+
+
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -25,6 +31,6 @@ import { ProfileStudyWrapperComponent } from './profile-student/study/profile-st
     ProfileAccountComponent,
     ProfileAccountWrapperComponent
   ],
-  imports: [SharedModule, ProfileRoutingModule]
+  imports: [SharedModule, ProfileRoutingModule, MaterialModule, FlexLayoutModule, MatTableModule, MatSelectModule ]
 })
 export class ProfileModule {}

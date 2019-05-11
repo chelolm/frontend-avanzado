@@ -1,18 +1,44 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.card {
+    width: 100%;
+}
+
+
+
+
+#profile{
+	width: 100%;
+}
 
 
 #contenido{
-	padding-top:4em;
+	font-size:12px !important;
 }
-td{
-	padding-left:2em;
+
+#datosPersonales{
+	width:50%;
 }
-#foto-perfil, #datosPersonales{
+#foto-perfil{
 	width:25%;
 
 }
 
 #otra_info{
 	padding-left:3em;
+	width:25%;
 }
 
 #otra_info  div{
@@ -21,3 +47,10 @@ td{
 h2{
 	margin-top:2em;
 }
+
+.mat-cell {
+    padding: 8px 8px 8px 8px;
+  }
+  .mat-header-cell {
+    padding: 8px 8px 8px 8px;
+  }

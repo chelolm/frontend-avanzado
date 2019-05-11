@@ -8,6 +8,12 @@ import { OffersListComponent } from './offers-list/offers-list.component';
 import { OffersProfileComponent } from './offers-profile/offers-profile.component';
 import { OffersDetailWrapperComponent } from './offers-detail/offers-detail.component-wrapper';
 
+
+import { MaterialModule } from '../../shared/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MatTableModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     OffersComponent,
@@ -16,6 +22,6 @@ import { OffersDetailWrapperComponent } from './offers-detail/offers-detail.comp
     OffersDetailComponent,
     OffersDetailWrapperComponent
   ],
-  imports: [CommonModule, OffersRoutingModule]
+  imports: [CommonModule, OffersRoutingModule, MaterialModule, FlexLayoutModule, MatTableModule]
 })
 export class OffersModule {}
