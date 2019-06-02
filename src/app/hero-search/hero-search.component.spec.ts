@@ -26,4 +26,22 @@ describe('HeroSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display "Hero Search" as h4', () => {
+    expect(fixture.nativeElement.querySelector('h4').textContent).toEqual('Hero Search');
+  });
+
+  it('should call search function when input is changed', async(() => {
+    spyOn(component, 'search');
+  
+    let inputElement = fixture.debugElement.nativeElement.querySelector('input');
+    inputElement.value = 'a';
+    inputElement.dispatchEvent(new Event('input'));
+  
+    fixture.whenStable().then(() => {
+      expect(component.search).toHaveBeenCalled();
+    });
+    
+  }));
+
 });

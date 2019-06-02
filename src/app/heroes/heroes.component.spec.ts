@@ -24,4 +24,19 @@ describe('HeroesComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display "My Heroes" as h2', () => {
+    expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('My Heroes');
+  });
+
+  it('should call add function when button is clicked', async(() => {
+    spyOn(component, 'add');
+  
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+  
+    fixture.whenStable().then(() => {
+      expect(component.add).toHaveBeenCalled();
+    });
+  }));
 });

@@ -1,0 +1,4 @@
+Las clases elegidas han sido:
+
+MessagesComponent
+HeroSearchComponent
