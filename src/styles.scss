@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'material';
+@import 'main';
+@import 'utils';
+@import 'responsive';
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+    $headline: mat-typography-level(16px, 24px, 500),
+    $body-1: mat-typography-level(14px, 20px, 300)
+);
+@include mat-core($custom-typography);

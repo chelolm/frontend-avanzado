@@ -1,0 +1,219 @@
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="center center">
+      <div fxFlex="50%" >
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span>Perfil</span>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-card>
+
+          <form [formGroup]="rForm" (submit)="save()">
+
+              <mat-form-field>
+                  <mat-label>name</mat-label>
+                  <input matInput
+                  type="text"
+                  name="name"
+                  formControlName="name"
+                />
+                <mat-error *ngIf="rForm.get('name').hasError('required')">El name es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>surname</mat-label>
+                  <input matInput
+                  type="text"
+                  name="surname"
+                  formControlName="surname"
+                />
+                <mat-error *ngIf="rForm.get('surname').hasError('required')">El surname es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>birthdate</mat-label>
+                  <input matInput
+                  type="text"
+                  name="birthdate"
+                  formControlName="birthdate"
+                />
+                <mat-error *ngIf="rForm.get('birthdate').hasError('required')">El birthdate es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>phone</mat-label>
+                  <input matInput
+                  type="text"
+                  name="phone"
+                  formControlName="phone"
+                />
+                <mat-error *ngIf="rForm.get('phone').hasError('required')">El phone es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>phone2</mat-label>
+                  <input matInput
+                  type="text"
+                  name="phone2"
+                  formControlName="phone2"
+                />
+                <mat-error *ngIf="rForm.get('phone2').hasError('required')">El phone2 es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>Tipo de documento</mat-label>
+                  <mat-select [compareWith]="compareByUID"
+                  name="documentType"
+                  formControlName="documentType"
+                >
+                  <mat-option [value]="documentType" *ngFor="let documentType of documentsType">
+                    {{ documentType.name }}</mat-option
+                  >
+                </mat-select>
+                  <mat-error *ngIf="rForm.get('documentType').hasError('required')">El tipo de documento es obligatorio</mat-error>
+                </mat-form-field>
+
+                
+              <mat-form-field>
+                  <mat-label>documentNumber</mat-label>
+                  <input matInput
+                  type="text"
+                  name="documentNumber"
+                  formControlName="documentNumber"
+                />
+                <mat-error *ngIf="rForm.get('documentNumber').hasError('required')">El documentNumber es obligatorio</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                  <mat-label>Calle</mat-label>
+                  <input matInput
+                  type="text"
+                  name="street"
+                  formControlName="street"
+                />
+                <mat-error *ngIf="rForm.get('street').hasError('required')">La calle es obligatoria</mat-error>
+              </mat-form-field>
+
+              
+              <mat-form-field>
+                  <mat-label>Provincia</mat-label>
+                  <mat-select [compareWith]="compareByUID"
+                  name="province"
+                  formControlName="province"
+                >
+                  <mat-option [value]="province" *ngFor="let province of provinces">
+                    {{ province.name }}</mat-option
+                  >
+                </mat-select>
+                  <mat-error *ngIf="rForm.get('province').hasError('required')">La provincia es obligatoria</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Municipio</mat-label>
+                    <mat-select [compareWith]="compareByUID"
+                    name="municipe"
+                    formControlName="municipe"
+                  >
+                    <mat-option [value]="municipe" *ngFor="let municipe of municipes">
+                      {{ municipe.name }}</mat-option
+                    >
+                  </mat-select>
+                    <mat-error *ngIf="rForm.get('municipe').hasError('required')">El municipio es obligatorio</mat-error>
+                  </mat-form-field>
+  
+                  <mat-form-field>
+                      <mat-label>Acerca de mi</mat-label>
+                      <textarea matInput
+                      name="aboutMe"
+                      formControlName="aboutMe"
+                    ></textarea>
+                    <mat-error *ngIf="rForm.get('aboutMe').hasError('required')">El acerca de mi es obligatorio</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-label>Otras competencias</mat-label>
+                      <textarea matInput
+                      name="otherCompetences"
+                      formControlName="otherCompetences"
+                    ></textarea>
+                    <mat-error *ngIf="rForm.get('otherCompetences').hasError('required')">Las otras competencias son obligatorias</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-label>Licencias</mat-label>
+                      <textarea matInput
+                      name="license"
+                      formControlName="license"
+                    ></textarea>
+                    <mat-error *ngIf="rForm.get('license').hasError('required')">Las licencias son obligatorias</mat-error>
+                  </mat-form-field>
+
+            <div class="form-group">
+              <label for="aboutMe">Acerca de mi</label>
+              <textarea
+                name="aboutMe"
+                class="col-sm-10 form-control"
+                formControlName="aboutMe"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="otherCompetences">Otras competencias</label>
+              <textarea
+                name="otherCompetences"
+                class="col-sm-10 form-control"
+                formControlName="otherCompetences"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="license">Licencias</label>
+              <textarea
+                name="license"
+                class="col-sm-10 form-control"
+                formControlName="license"
+              ></textarea>
+            </div>
+            <!--   <div class="form-group">
+              <label for="level">Nivel</label>
+              <select
+                [compareWith]="compareLevel"
+                class="col-sm-10 form-control"
+                name="level"
+                formControlName="level"
+              >
+                <option [ngValue]="level" *ngFor="let level of languageLevels">
+                  {{ level.name }}</option
+                >
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Idioma</label>
+              <select
+                class="col-sm-10 form-control"
+                name="name"
+                formControlName="name"
+                [compareWith]="compareName"
+              >
+                <option [ngValue]="name" *ngFor="let name of languageNames">
+                  {{ name.name }}</option
+                >
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date">Fecha de obtención del título</label>
+              <input
+                type="text"
+                name="date"
+                class="col-sm-10 form-control"
+                formControlName="date"
+              />
+            </div> -->
+
+            <button mat-raised-button color="primary"  type="submit" [disabled]="rForm.invalid">
+              Guardar
+            </button>
+          </form>
+
+
+</mat-card>

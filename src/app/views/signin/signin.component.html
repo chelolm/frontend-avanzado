@@ -1,0 +1,65 @@
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="33%" >
+          <mat-toolbar color="primary">
+              <mat-toolbar-row>
+                <span>Login</span>
+              </mat-toolbar-row>
+          </mat-toolbar>
+ 
+          <mat-card>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <div *ngIf="errorLogin" class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">
+            &times;
+          </button>
+
+          There is an error in email or password
+        </div>
+
+        <div class="form-group">   
+          <mat-form-field>     
+         <input matInput placeholder="Username" required class="signin-input"
+            type="text"
+            id="email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': submitted && loginForm.controls.email.errors
+            }"
+          />
+        </mat-form-field> 
+        </div>
+        <div class="form-group">
+          <mat-form-field >
+          <input matInput placeholder="Password" required class="signin-input"
+            type="password"
+            id="password"
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid': submitted && loginForm.controls.password.errors
+            }"
+          />
+        </mat-form-field> 
+        </div>
+        <div class="form-group" id="signin-buttons"> 
+          
+          <button mat-raised-button color="primary" [disabled]="loginForm.invalid">
+            LOGIN
+          </button>
+          <a id="forgot" routerLink="/forgot-password" class="btn btn-link"
+            >FORGOT&nbsp;PASSWORD</a
+          >
+          <mat-divider class="signin-divisor"></mat-divider>
+        </div>
+        <div id="signin-up">
+          <a   routerLink="#">SIGN&nbsp;UP</a>
+        </div>
+    
+      </form>
+    </mat-card>
+    </div>
+ 
+  </div>
+</div>

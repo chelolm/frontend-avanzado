@@ -1,0 +1,110 @@
+{
+  "configVersion": 1,
+  "timestamp": 1560565247598,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/10.2c0b69527f08c64bd3b9.js",
+        "/11.fc190a69991fcfdcecff.js",
+        "/12.6fcfd0501c0685eb8204.js",
+        "/2.3dc562f9bc9da6e92045.js",
+        "/6.c86410f9d77cdda01292.js",
+        "/7.a2294798da99e11208c9.js",
+        "/8.010a07b2f1d59a0d9a75.js",
+        "/9.aeadb2b8f423e45a1915.js",
+        "/common.95cbb44691d5bc82d432.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.79b72b10f50de2c221e5.js",
+        "/polyfills.fb693824bfdde9344f9f.js",
+        "/runtime.5d8439cf6dc46cab7961.js",
+        "/styles.74504992402c2dd147da.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/fonts/FontinSans/Fontin_Sans_B.otf",
+        "/assets/fonts/FontinSans/Fontin_Sans_BI.otf",
+        "/assets/fonts/FontinSans/Fontin_Sans_I.otf",
+        "/assets/fonts/FontinSans/Fontin_Sans_R.otf",
+        "/assets/fonts/FontinSans/Fontin_Sans_SC.otf",
+        "/assets/i18n/en.json",
+        "/assets/i18n/fr.json",
+        "/assets/i18n/ur.json",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/img/perfil.png",
+        "/assets/img/uoc_logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/10.2c0b69527f08c64bd3b9.js": "45ae5f68dbf9fb7471e94c67d98e783bfce2310f",
+    "/11.fc190a69991fcfdcecff.js": "23f4bdd34c760f9ef5b55e7d0fec37c0904d3ac2",
+    "/12.6fcfd0501c0685eb8204.js": "612cb4864a25e81af535eb8acf3246ad2598f0c3",
+    "/2.3dc562f9bc9da6e92045.js": "55f8c0b66da8eaddbbf5361d9667916d9904b70e",
+    "/6.c86410f9d77cdda01292.js": "d5ce41ee0c9e59b57e25769c9569b6a6eefcdfc8",
+    "/7.a2294798da99e11208c9.js": "8bed77e3825a257fb88170548d7db83f7756567c",
+    "/8.010a07b2f1d59a0d9a75.js": "5108dfdc46d216a7d9498a48cdb60e405ddd2c26",
+    "/9.aeadb2b8f423e45a1915.js": "b25e7133e3c87f7065e622af3bd7b8bf53e5d7bd",
+    "/assets/fonts/FontinSans/Fontin_Sans_B.otf": "35845d36e336191f9db678a9c55ea3bcff92dfe4",
+    "/assets/fonts/FontinSans/Fontin_Sans_BI.otf": "1c0eaf3a484f2ae3f1754def68b5750a1d99d3f1",
+    "/assets/fonts/FontinSans/Fontin_Sans_I.otf": "db2dd0d7216ee27b6b05d924735c9a8a7f4faa70",
+    "/assets/fonts/FontinSans/Fontin_Sans_R.otf": "d2e2a88fd29e66fd71bd935877a5462c97a98c94",
+    "/assets/fonts/FontinSans/Fontin_Sans_SC.otf": "00c252c9d64ef9b15b6bd68f68a4a7545896f772",
+    "/assets/i18n/en.json": "2e31a0c8c6abd108a90eedc5221922fab238411c",
+    "/assets/i18n/fr.json": "8647b8ce024dfbeef10591471fc0574ad18f0453",
+    "/assets/i18n/ur.json": "7fe2eeaa7a510633da7c14ee4262ff83a6947a1e",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/img/perfil.png": "c34d68aa614df190342bf4ccfb05fabce3561034",
+    "/assets/img/uoc_logo.png": "a8268228316a687fc11a0ecbedb2507aedcccf39",
+    "/common.95cbb44691d5bc82d432.js": "61ae3f83e136168fc6efd9b0c0b967fd6f623f3a",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "c1d9aef66060766c623095d7f1788d575512ec05",
+    "/main.79b72b10f50de2c221e5.js": "76a5f738601e10758070b760dda0a2faf3b90761",
+    "/polyfills.fb693824bfdde9344f9f.js": "5fe3998ed794069e37a619f22a4faa5dbe8464dc",
+    "/runtime.5d8439cf6dc46cab7961.js": "e923e773d5b7f0382d15084d894ba081e922c28e",
+    "/styles.74504992402c2dd147da.css": "53a0cfa2c80e46b37e75eded6d02f8e2184d8abb"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
