@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560623405657,
+  "timestamp": 1560631267487,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "/common.f8327c41b5903a463907.js",
         "/favicon.ico",
         "/index.html",
-        "/main.02ab928877df5fff4b55.js",
+        "/main.01744401f35db28b63ae.js",
         "/polyfills.4c5b9e56bee37e622d5a.js",
         "/runtime.c82fbd728b2398f576f0.js",
         "/styles.b2f16daa6ec03330b9e5.css"
@@ -93,10 +93,10 @@
     "/assets/img/uoc_logo.png": "a8268228316a687fc11a0ecbedb2507aedcccf39",
     "/common.f8327c41b5903a463907.js": "58de5be37fd24ae72182843bd7260211d377f2e6",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/index.html": "cddf35ab335857643a65858e71ce9bb57040e698",
+    "/index.html": "f620ccc6e1fe8157917f2c30c56bed5df67b5411",
     "/lock_bg.e22325c1cdc3a1591268.jpg": "307ea255e7831a5edda35243a106a03c41140b82",
     "/login_bg.4e2f642c39de98d0e3c1.jpg": "aa5d0a52df5e87fc5a56fca446c58d1b96b6dc5e",
-    "/main.02ab928877df5fff4b55.js": "cc0be146b69bc5c410bc061ba4b7c41fba569fb6",
+    "/main.01744401f35db28b63ae.js": "30700a2b2276718cea4aca3534f58249c567e992",
     "/polyfills.4c5b9e56bee37e622d5a.js": "ad54388e3f78ff96aaa4c3808b17569aa45c16c4",
     "/runtime.c82fbd728b2398f576f0.js": "2e2cd2a56de6b255287d6d00c2401fd111c7f1ff",
     "/styles.b2f16daa6ec03330b9e5.css": "52c91e56f29d1e6e6a6d5cc9ddebac64d65ec446"
