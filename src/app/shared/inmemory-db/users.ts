@@ -1,5 +1,14 @@
 export class UserDB {
-  public users = [
+
+  public getUsers() {
+    return this.users;
+  }
+
+  public setUsers(users) {
+    this.users = users;
+  }
+
+  private users = [
     {
       _id: '5a7b73f76bed15c94d1e46d4',
       index: 0,

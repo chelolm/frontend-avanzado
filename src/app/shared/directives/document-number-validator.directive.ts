@@ -11,6 +11,7 @@ const COMMAND = {
     return !this[type](params);
   }
 };
+
 function isValidNIF(nif: string): boolean {
   let isValid = false;
   let fixedNIF = nif.toUpperCase();
@@ -25,66 +26,67 @@ function isValidNIF(nif: string): boolean {
 
   writtenDigit = nif.substr(-1, 1);
 
-  if (isValidNIFFormat(fixedNIF)) {
-    correctDigit = getNIFCheckDigit(fixedNIF);
+  let isValidStep1 = false;
 
-    if (writtenDigit == correctDigit) {
-      isValid = true;
-    }
-  }
-  return isValid;
-}
-function isValidNIFFormat(docNumber) {
-  return respectsDocPattern(
-    docNumber,
-    /^[KLM0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/
-  );
-}
-function respectsDocPattern(givenString, pattern) {
-  let isValid = false;
-
-  let fixedString = givenString.toUpperCase();
+  let fixedString = fixedNIF.toUpperCase();
   const firstChar = parseInt(fixedString.substr(0, 1), 10);
 
   if (firstChar % 1 === 0) {
     fixedString = '000000000' + fixedString;
     fixedString = fixedString.substr(-9);
   }
+  let pattern = new RegExp("/^[KLM0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/");
 
   if (pattern.test(fixedString)) {
-    isValid = true;
+    isValidStep1 = true;
   }
 
+  if (isValidStep1) {
+    const keyString = 'TRWAGMYFPDXBNJZSQVHLCKE';
+
+    let fixedDocNumber = fixedNIF.toUpperCase();
+
+    let position = 0;
+    let writtenLetter = '';
+    let correctLetter = '';
+
+    if (!/^[A-Z]+$/i.test(fixedDocNumber.substr(1, 1))) {
+      fixedDocNumber = '000000000' + fixedDocNumber;
+      fixedDocNumber = fixedDocNumber.substr(-9);
+    } else {
+      fixedDocNumber = fixedNIF.toUpperCase();
+    }
+
+    let isValidStep2 = false;
+    let fixedString = fixedDocNumber.toUpperCase();
+    const firstChar = parseInt(fixedString.substr(0, 1), 10);
+  
+    if (firstChar % 1 === 0) {
+      fixedString = '000000000' + fixedString;
+      fixedString = fixedString.substr(-9);
+    }
+    let pattern = new RegExp("/^[KLM0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/");
+  
+    if (pattern.test(fixedString)) {
+      isValidStep2 = true;
+    }
+
+    if (isValidStep2) {
+      writtenLetter = fixedDocNumber.substr(-1);
+
+      fixedDocNumber = fixedDocNumber.replace('K', '0');
+      fixedDocNumber = fixedDocNumber.replace('L', '0');
+      fixedDocNumber = fixedDocNumber.replace('M', '0');
+
+      position = parseInt(fixedDocNumber.substr(0, 8)) % 23;
+      correctLetter = keyString.substr(position, 1);
+    }
+
+    if (writtenDigit == correctLetter) {
+      isValid = true;
+    }
+  }
   return isValid;
-}
-function getNIFCheckDigit(docNumber) {
-  const keyString = 'TRWAGMYFPDXBNJZSQVHLCKE';
-
-  let fixedDocNumber = docNumber.toUpperCase();
-
-  let position = 0;
-  let writtenLetter = '';
-  let correctLetter = '';
-
-  if (!/^[A-Z]+$/i.test(fixedDocNumber.substr(1, 1))) {
-    fixedDocNumber = '000000000' + fixedDocNumber;
-    fixedDocNumber = fixedDocNumber.substr(-9);
-  } else {
-    fixedDocNumber = docNumber.toUpperCase();
-  }
-
-  if (isValidNIFFormat(fixedDocNumber)) {
-    writtenLetter = fixedDocNumber.substr(-1);
-
-    fixedDocNumber = fixedDocNumber.replace('K', '0');
-    fixedDocNumber = fixedDocNumber.replace('L', '0');
-    fixedDocNumber = fixedDocNumber.replace('M', '0');
-
-    position = fixedDocNumber.substr(0, 8) % 23;
-    correctLetter = keyString.substr(position, 1);
-  }
-
-  return correctLetter;
 }
 
 function isValidPassport(passport: string): boolean {

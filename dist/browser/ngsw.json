@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560633757708,
+  "timestamp": 1561509417818,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -10,7 +10,7 @@
       "urls": [
         "/10.a1d03f071802a854324e.js",
         "/11.73e7dcf0dabd02f1db52.js",
-        "/5.4ed70031eb87695870d1.js",
+        "/5.7a52255df7836bd7df40.js",
         "/6.778596f5c74aa091b308.js",
         "/7.5ea2149eed2e5922ceec.js",
         "/8.f845370b2eb1ca6899a1.js",
@@ -20,7 +20,7 @@
         "/index.html",
         "/main.92ade41276886cc6b325.js",
         "/polyfills.4c5b9e56bee37e622d5a.js",
-        "/runtime.c82fbd728b2398f576f0.js",
+        "/runtime.2a25f5a1d8790247de4c.js",
         "/styles.b2f16daa6ec03330b9e5.css"
       ],
       "patterns": []
@@ -63,7 +63,7 @@
   "hashTable": {
     "/10.a1d03f071802a854324e.js": "755b43ea8766b7d036afee6e7064776b187b7eca",
     "/11.73e7dcf0dabd02f1db52.js": "7ba07dc5d876388f2a4d707e59f6dc44a0da900d",
-    "/5.4ed70031eb87695870d1.js": "178d47d5ab745b40b7abb45ffc1e1b2a6edb4321",
+    "/5.7a52255df7836bd7df40.js": "518f7da1054770155d6c74d38cc2c051f2834a14",
     "/6.778596f5c74aa091b308.js": "232d18b4e823f060d013ed56b97e4f7bf3c5d1b2",
     "/7.5ea2149eed2e5922ceec.js": "655abe5b2c1c5eb6eece4f25fdcd5084ed1915b9",
     "/8.f845370b2eb1ca6899a1.js": "18fee3e992f6a20d7af44d0f8d98eb4bf246e665",
@@ -93,12 +93,12 @@
     "/assets/img/uoc_logo.png": "a8268228316a687fc11a0ecbedb2507aedcccf39",
     "/common.f8327c41b5903a463907.js": "58de5be37fd24ae72182843bd7260211d377f2e6",
     "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/index.html": "a5730e1f8603264692b39184b7307af63558e6f8",
+    "/index.html": "b2a19062f7c66c76a985f6e1c665a991e9881c8a",
     "/lock_bg.e22325c1cdc3a1591268.jpg": "307ea255e7831a5edda35243a106a03c41140b82",
     "/login_bg.4e2f642c39de98d0e3c1.jpg": "aa5d0a52df5e87fc5a56fca446c58d1b96b6dc5e",
     "/main.92ade41276886cc6b325.js": "6067b3d1d458e06b8d518df73575470fb1d49acc",
     "/polyfills.4c5b9e56bee37e622d5a.js": "ad54388e3f78ff96aaa4c3808b17569aa45c16c4",
-    "/runtime.c82fbd728b2398f576f0.js": "2e2cd2a56de6b255287d6d00c2401fd111c7f1ff",
+    "/runtime.2a25f5a1d8790247de4c.js": "f8cbd33867e628aaac3a28ca50fd83905758f5bd",
     "/styles.b2f16daa6ec03330b9e5.css": "52c91e56f29d1e6e6a6d5cc9ddebac64d65ec446"
   },
   "navigationUrls": [
